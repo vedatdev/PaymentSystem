@@ -21,7 +21,7 @@ public class PaymentController {
     private final PaymentServiceImpl paymentService;
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getCustomers(){
+    public ResponseEntity<Response> getPayments(){
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(LocalDateTime.now())
@@ -34,7 +34,7 @@ public class PaymentController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Response> getCustomer(@PathVariable("id") Long id){
+    public ResponseEntity<Response> getPayment(@PathVariable("id") Long id){
         try {
             return ResponseEntity.ok(
                     Response.builder()
@@ -58,7 +58,7 @@ public class PaymentController {
         }
     }
 
-    @PostMapping("/save")
+    @PostMapping("/save/{subNo}")
     public ResponseEntity<Response> save(@PathVariable String subNo){
         return ResponseEntity.ok(
                 Response.builder()

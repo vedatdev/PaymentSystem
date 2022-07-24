@@ -22,7 +22,7 @@ public class InvoiceController {
     private final InvoiceServiceImpl invoiceService;
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getCustomers(){
+    public ResponseEntity<Response> getInvoices(){
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(LocalDateTime.now())
